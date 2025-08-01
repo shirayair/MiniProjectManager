@@ -105,6 +105,11 @@ app.MapControllers();
 // ✅ 👇PORT מ־Render
 var port = Environment.GetEnvironmentVariable("PORT") ?? "80";
 app.Urls.Add($"http://*:{port}");
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+}
 
 // ✅ Start the app
 app.Run();
