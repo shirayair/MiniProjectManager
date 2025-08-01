@@ -40,6 +40,6 @@ npm run dev
 🌐 Live Demo
 Frontend (Vercel): https://mini-project-manager.vercel.app
 
-Backend (Render): https://your-render-url.onrender.com
+Backend (Render): https://miniprojectmanager.onrender.com  --> https://miniprojectmanager.onrender.com/swagger
 
 
