@@ -1,0 +1,21 @@
+# Base image for running the application
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+WORKDIR /app
+EXPOSE 80
+
+# SDK image for building the application
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+WORKDIR /src
+
+# Copy source code and restore dependencies
+COPY . .
+RUN dotnet restore
+RUN dotnet publish -c Release -o /app/publish
+
+# Final image to run the app
+FROM base AS final
+WORKDIR /app
+COPY --from=build /app/publish .
+
+# Entry point for the container
+ENTRYPOINT ["dotnet", "backend.dll"]
