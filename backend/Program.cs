@@ -88,7 +88,7 @@ builder.Services.AddCors(options =>
 // ✅ Build the application
 var app = builder.Build();
 
-// ✅ Swagger (גם בפרודקשן)
+// ✅ Swagger 
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
@@ -102,7 +102,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-// ✅ 👇 הוספת PORT מ־Render
+// ✅ 👇PORT מ־Render
 var port = Environment.GetEnvironmentVariable("PORT") ?? "80";
 app.Urls.Add($"http://*:{port}");
 
