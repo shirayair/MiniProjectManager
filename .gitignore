@@ -17,3 +17,4 @@ backend/*.suo
 *.log
 .DS_Store
 Thumbs.db
+"backend/out/" 
