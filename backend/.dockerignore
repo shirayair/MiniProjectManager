@@ -1,8 +1,17 @@
+# Ignore build folders
 bin/
 obj/
+
+# Ignore database files
 *.db
-*.md
+
+# Ignore user-specific settings
 *.user
 *.suo
+
+# Ignore local config
 .vscode/
+appsettings.Development.json
+
+# Ignore git folder
 .git/
