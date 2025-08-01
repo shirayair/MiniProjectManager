@@ -31,7 +31,6 @@ A full-stack web application to manage your personal projects and tasks.
 git clone https://github.com/shirayair/MiniProjectManager.git
 cd MiniProjectManager
 cd backend
-dotnet restore       
 dotnet build        
 dotnet run
 cd ../frontend
