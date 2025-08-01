@@ -1,0 +1,19 @@
+# TS & React (frontend)
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.DS_Store
+
+# ASP.NET Core (backend)
+backend/bin/
+backend/obj/
+backend/*.db
+backend/app.db
+backend/.vs/
+backend/*.user
+backend/*.suo
+
+# System
+*.log
+.DS_Store
+Thumbs.db
