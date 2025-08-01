@@ -29,7 +29,6 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "My API", Version = "v1" });
 
-    // 🔐 Enable JWT support in Swagger UI
     c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
     {
         Description = "Enter JWT like this: Bearer {your_token}",
@@ -89,7 +88,7 @@ builder.Services.AddCors(options =>
 // ✅ Build the application
 var app = builder.Build();
 
-// ✅ Swagger UI always enabled (also in production like Render)
+// ✅ Swagger (גם בפרודקשן)
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
@@ -102,6 +101,10 @@ app.UseCors("AllowFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+// ✅ 👇 הוספת PORT מ־Render
+var port = Environment.GetEnvironmentVariable("PORT") ?? "80";
+app.Urls.Add($"http://*:{port}");
 
 // ✅ Start the app
 app.Run();
