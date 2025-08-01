@@ -35,5 +35,11 @@ dotnet build
 dotnet run
 cd ../frontend
 npm install          # Install dependencies
-npm run dev          
+npm run dev
+      
+🌐 Live Demo
+Frontend (Vercel): https://mini-project-manager.vercel.app
+
+Backend (Render): https://your-render-url.onrender.com
+
 
