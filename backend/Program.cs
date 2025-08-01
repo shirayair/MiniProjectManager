@@ -89,12 +89,12 @@ builder.Services.AddCors(options =>
 // ✅ Build the application
 var app = builder.Build();
 
-// ✅ Development tools
-if (app.Environment.IsDevelopment())
+// ✅ Swagger UI always enabled (also in production like Render)
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+});
 
 // ✅ Middleware pipeline
 app.UseHttpsRedirection();
